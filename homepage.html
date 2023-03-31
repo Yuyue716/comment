@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block unique_body %}
+            <div class="box">
+                <div class="bottom">
+                    <ul>
+                        {% for expert in expertise %} 
+                        <li>
+                            <form action="/friday_website" method='get'>
+                                <input type="hidden" name="expert" value="{{expert.type}}">
+                                <button type="submit" class="fs-5 fw-bold" style = " color:#0d82bb;height: 2.5cm; border: none;background-color: white; ">
+                                    <span>{{expert.type}}</span>
+                                    {{ expert.numbers }}
+                                </button>
+                            </form>
+
+
+                            <!-- <a href="friday_website/{{expert.type}}" class="fs-3 fw-bold">
+                                <span>{{ expert.type }}</span>
+                                {{ expert.numbers }}
+                            </a> -->
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        
+    <!-- <footer>
+        <small>&copy; 2018 <a href="http://helloflask.com/book/3">HelloFlask</a></small>
+    </footer> -->
+    {% endblock %}
